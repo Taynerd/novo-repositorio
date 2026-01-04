@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Roleta</title>
+    <link rel="stylesheet" href="stylejogo4.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- JOGADORES -->
+      <section class="card">
+        <h2>Jogadores</h2>
+
+        <div id="players">
+          <input type="text" placeholder="Jogador 1" />
+          <input type="text" placeholder="Jogador 2" />
+          <input type="text" placeholder="Jogador 3" />
+        </div>
+
+        <div class="buttons">
+          <button id="addPlayer">+</button>
+          <button id="sortear">Sortear 2</button>
+        </div>
+
+        <p id="resultadoSorteio"></p>
+      </section>
+
+      <!-- ROLETA -->
+      <div class="container">
+    <h2>Roleta de Ações</h2>
+
+  <div class="roleta-wrapper">
+    <div class="ponteiro">▼</div>
+
+    <div class="roleta" id="roleta">
+      <span style="--i:0">CHUPAR</span>
+      <span style="--i:1">LAMBER</span>
+      <span style="--i:2">MORDER</span>
+      <span style="--i:3">BEIJAR</span>
+      <span style="--i:4">APERTAR</span>
+      <span style="--i:5">CHEIRAR</span>
+    </div>
+  </div>
+
+    <button id="girar">GIRAR</button>
+    <div id="resultado"></div>
+  </div>
+
+    <script src="scriptjogo4.js"></script>
+  </body>
+</html>

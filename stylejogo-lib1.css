@@ -1,0 +1,128 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Courier, monospace
+}
+
+body {
+background-color: #020000;
+  text-align: center;
+  padding-top: 20px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom:20%;
+}
+
+h1 {
+  padding-bottom: 20px;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 10%;
+}
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 5%;
+}
+
+.option {
+  height: 200px;
+background-color: rgba(255, 0, 0, 0.682);
+  border-radius: 8px;
+  border: 2px solid brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform .25s ease;
+}
+
+.option:active {
+  transform: scale(.96);
+}
+
+/* carta que vem para frente */
+.card-expanded {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  inset: 50%;
+  transform: translate(-50%, -50%) scale(.6);
+  width: 60%;
+  height: 40%;
+  background: #111;
+  color: #fff;
+  border-radius: 18px;
+  padding: 30px 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .45s cubic-bezier(.4,0,.2,1);
+  z-index: 100;
+}
+.card-expanded p{
+  padding-top: 20px;
+}
+
+.card-expanded.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Escurece fundo */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+  z-index: 50;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+footer{
+  margin-top: 5%;
+  color: #fff;
+  justify-content: center;
+  font-weight:800;
+}
+
+.btn-ver-resposta {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: #600000;
+  color: #fff;
+}
+
+.resposta {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity .4s ease, max-height .4s ease;
+  padding-bottom: 40px;
+}
+
+.resposta.show {
+  opacity: 1;
+  max-height: 200px;
+}

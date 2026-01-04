@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conexão a Dois</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    text-align: center;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("fotos-kama-sutra/foto-fetiche.avif");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.90; /* transparência da imagem */
+    z-index: -1;
+}
+
+.card {
+    width: 92%;
+    max-width: 380px;
+    background: rgba(20, 20, 20, 0.384);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: 0 0 10px rgb(255, 0, 0);
+    color: #fff;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pergunta {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+}
+.btn-saiba-mais {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(180deg, #ff0202, #000000);
+    color: #fff;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.texto-grupo{
+    font-weight: 100;
+    font-size: 1rem;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.opcoes button {
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #880303;
+    color: #fff;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.opcoes button:nth-child(2) {
+    background-color: #460202a7;
+}
+
+.progress-container {
+    margin-top: 25px;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #600000, #ff0000);
+    transition: width .4s ease;
+}
+
+.resultado {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="pergunta" id="pergunta"></div>
+
+    <div class="opcoes" id="opcoes">
+        <button onclick="responder(true)">SIM</button>
+        <button onclick="responder(false)">NÃO</button>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress" id="progress"></div>
+    </div>
+</div>
+
+
+<script>
+const perguntas = [
+ "Você sente incômodo ou agonia ao ser imobilizado durante o sexo?",
+    "Você se incomodaria ao ser observado por outra pessoa transando com seu parceiro?",
+    "sentir dor durante o sexo (tapas, mordidas e arranhões) te causa prazer?",
+    "Ver o seu parceiro(a) sentindo dor te causa prazer?",
+    "Observar outros casais transando te deixa desconfortável?",
+    "Você gosta de testar seus limites no sexo?",
+    "Observar seu parceiro com outro(a) te deixa excitado?",
+    "Te excita a ideia de ser amordaçado?"
+];
+
+// pesos por pergunta
+const pesos = [
+    { sim: 0,  nao: 1  },
+    { sim: 0,  nao: 20 },
+    { sim: 15, nao: 0  },
+    { sim: 15, nao: 0  },
+    { sim: 0,  nao: 20 },
+    { sim: 15, nao: 0  },
+    { sim: 20, nao: 0  },
+    { sim: 1,  nao: 0  }
+];
+
+let indice = 0;
+let pontos = 0;
+let grupo = 0;
+
+const perguntaEl = document.getElementById("pergunta");
+const progressEl = document.getElementById("progress");
+const opcoesEl = document.getElementById("opcoes");
+
+function carregarPergunta() {
+    perguntaEl.textContent = perguntas[indice];
+    progressEl.style.width = (indice / perguntas.length) * 100 + "%";
+}
+
+function responder(respostaSim) {
+    const peso = respostaSim ? pesos[indice].sim : pesos[indice].nao;
+    pontos += peso;
+    indice++;
+
+    if (indice < perguntas.length) {
+        carregarPergunta();
+    } else {
+        mostrarResultado();
+    }
+}
+
+function mostrarResultado() {
+    progressEl.style.width = "100%";
+    opcoesEl.style.display = "none";
+
+    let resultado = "";
+if (pontos === 0) {
+    grupo = 0;
+    resultado = "Seu estilo de relação é bem convencional, você não se encaixa no perfil de ter um fetiche específico";
+} else if (pontos <= 40) {
+    grupo = 1;
+    resultado = "OS FETICHES QUE DEVE GOSTAR SÃO: <br> Bondage, shibari, privação de sentidos e spanking";
+} else if (pontos <= 70) {
+    grupo = 2;
+    resultado = "OS FETICHES QUE DEVE GOSTAR SÃO: <br> Sufocamento, spanking, wax play (velas) e eletrochoque";
+} else {
+    grupo = 3;
+    resultado = "OS FETICHES QUE DEVE GOSTAR SÃO: <br> Voyeurismo, cuckold e exibicionismo";
+}
+
+perguntaEl.innerHTML = `
+    <div class="resultado">
+        ${resultado}<br>
+        ${grupo > 0 ? `<button class="btn-saiba-mais" onclick="mostrarPaginaGrupo(${grupo})">CONHECER</button>` : ``}
+    </div>
+`;
+
+}
+
+carregarPergunta();
+
+function mostrarPaginaGrupo(grupo) {
+    const conteudo = {
+        1: {
+            titulo: "O MASOQUSTA",
+            texto: "<strong>→BONDAGE</strong> é o ato de imobilizar com cordas, algemas, ou outros objetos, o seu parceiro.<br><br> <strong>→SHIBARI</strong> é uma técnica japonesa de amarrações com cordas, indo muito além de amarrar apenas os pulsos. <br><br> <strong>→PRIVAÇÃO DOS SENTIDOS</strong>, te permite potencializar outras sensações corporais e aumentar ainda mais a sensação de prazer durante o orgasmo. <br><br><strong>→SPANKING</strong> é o ato de bater com a mão, chicote ou outros objetos, principalmente as nádegas do parceiro"
+        },
+        2: {
+            titulo: "O SÁDICO",
+            texto: "<strong>→SUFOCAMENTO</strong> é o ato de inibir a respiração ou fazer sexo em lugares apertados. <br><br> <strong>→SPANKING</strong> é o ato de bater com a mão, chicote ou outros objetos, principalmente as nádegas do parceiro <br><br> <strong>→ELETROCHOQUE</strong> é utilizado como forma de tortura de leve a intensa em lugares senssíveis como seios e virilha <br><br> <strong>→WAX PLAY</strong> consiste no uso de velas específicas para o contato com a pela que aquecem e também pode ser usada para massagem"
+        },
+        3: {
+            titulo: "O EXIBICIONISTA",
+            texto: "<strong>→CUCKOLD</strong> é para os que gostam de ver ou compartilhar seu parceiro com outras pessoas, ou seja, para os que gostam de ser cornos. <br><br><strong> →EXIBICIONISMO</strong> é para os que gostam de ser vistos no ato sexual <br><br><strong>→VOYEURISMO</strong> é para os que gostam de observar outros casais se relacionando, sem ter a intenção de participar"
+        }
+    };
+
+    perguntaEl.innerHTML = `
+        <div class="resultado">
+            <h2 class="titulo-grupo">${conteudo[grupo].titulo}</h2>
+            <p class="texto-grupo">${conteudo[grupo].texto}</p>
+        </div>
+    `;
+}
+
+</script>
+
+</body>
+</html>

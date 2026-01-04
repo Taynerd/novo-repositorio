@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, Courier,
+    monospace;
+}
+
+body {
+  background-image: linear-gradient(180deg,rgb(233, 0, 0),rgb(80, 0, 0),rgb(2, 0, 0));
+  height: 100vh;
+  text-align: center;
+  padding-top: 20px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color:white;
+}
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 10px;
+  padding: 0 5%;
+  
+  
+}
+
+.option {
+  display: block;
+  background-image: linear-gradient(180deg, rgb(233, 0, 0), rgb(80, 0, 0), rgb(2, 0, 0));
+  flex-wrap: wrap;
+  text-align: center;
+  color: aliceblue;
+  border-radius: 5px;
+  padding: 8px;
+  border: 2px solid brown;
+  height:80px;
+}
+
+.options p {
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+/* Escurece fundo */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Oculta o overlay inicialmente */
+.hidden {
+  display: none;
+}
+
+/* Card expandido */
+.card-expandido {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.card-expandido p {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+#fechar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+}
+
+footer{
+  margin-top: 5%;
+  color: #fff;
+  justify-content: center;
+  font-weight:800;
+}

@@ -1,0 +1,92 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: raleway; 
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    text-align: center;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("fotos-kama-sutra/FOTO-CAPA-BDSM.jpeg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.90; /* transparência da imagem */
+    z-index: -1;
+}
+.titulo{
+padding-top: 20px;
+padding-bottom: 20px;
+color: white;
+
+}
+.info{
+    padding-bottom: 20px;
+    color: aliceblue;
+
+}
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.cards{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.card{
+    background-image: linear-gradient(180deg, rgb(233, 0, 0), rgb(80, 0, 0), rgb(2, 0, 0));  
+    padding: 20px 10px;
+    border-radius: 5px;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 5%;
+    width: 80%;
+
+}
+.informacao{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn-iniciar{
+    padding-top: 3px;
+    font-weight: 600;
+    text-align:center;
+    margin-top: 15px;
+    height: 30px;
+    width: 100px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color: aliceblue;
+    color: brown;
+}
+
+.informacao p{
+    color:aliceblue
+
+}
+
+footer{
+  margin-top: 5%;
+  font-weight: 800;
+  height: 8%;
+  color: #fff;
+  justify-content: center;
+}

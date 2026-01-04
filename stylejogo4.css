@@ -1,0 +1,172 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #5a0101, #0b0b0b 70%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTAINER */
+.container {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow:
+    0 0 25px rgba(255, 0, 0, 0.15),
+    inset 0 0 20px rgba(255, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* TITULOS */
+.card h2 {
+  margin-bottom: 14px;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #262626;
+  color: #fff;
+  outline: none;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* BOTÕES */
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #700000, #c00000);
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+}
+
+/* RESULTADOS */
+#resultadoSorteio,
+#resultadoRoleta {
+  margin-top: 14px;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* ===================== */
+/* ROLETA */
+/* ===================== */
+.container {
+  text-align: center;
+}
+
+.roleta-wrapper {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: 20px auto;
+}
+
+/* ROLETA REAL */
+.roleta {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background:
+    conic-gradient(
+      #8b0000 0deg 60deg,
+      #a00000 60deg 120deg,
+      #8b0000 120deg 180deg,
+      #a00000 180deg 240deg,
+      #8b0000 240deg 300deg,
+      #a00000 300deg 360deg
+    );
+  position: relative;
+  transition: transform 3s cubic-bezier(.17,.67,.22,.99);
+}
+
+/* TEXTO DAS FATIAS */
+.roleta span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(var(--i) * 60deg + 30deg))
+    translateY(-85px)
+    rotate(-90deg);
+
+  transform-origin: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #fff;
+}
+
+/* PONTEIRO */
+.ponteiro {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+  color: red;
+  z-index: 100;
+}
+
+button {
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: none;
+  background: crimson;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#resultado {
+  margin-top: 12px;
+  font-weight: bold;
+}
