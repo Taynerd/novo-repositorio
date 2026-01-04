@@ -8,8 +8,8 @@ const textos = [
 "Qual o simbolo da mulher casada que é liberada para se relacionar com outros (as)",
 "Quantas pessoas são necessárias pra fazer um menáge?",
 "Qual nome da prática na qual o homem coloca seu pênis ereto para receber oral através de uma parede sem ver a pessoa do outro lado?",
-"Como é chamada a prática da troca de casais?"
-""
+"Como é chamada a prática da troca de casais?",
+"g"
 ];
 
 const respostas = [
@@ -54,14 +54,11 @@ overlay.addEventListener('click', closeCard);
   isOpen = true;
 }
 
-
-
 function closeCard() {
   expanded.classList.remove('active');
   overlay.classList.remove('active');
   isOpen = false;
 }
-
 
 function verResposta() {
   const respostaEl = document.getElementById('resposta');
