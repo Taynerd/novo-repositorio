@@ -16,6 +16,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color:white;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
 .options {
   display: grid;

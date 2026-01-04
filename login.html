@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar • Jogo para Casais</title>
+
+  <link rel="stylesheet" href="login.css">
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<!-- Firebase config -->
+<script src="js/firebase.js"></script>
+
+<!-- Login logic -->
+<script src="js/login.js"></script>
+
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="logo">❤️</div>
+
+    <h1 id="title">Bem-vindos de volta</h1>
+    <p id="subtitle">Entre para iniciar o jogo</p>
+
+    <!-- SWITCH -->
+    <div class="mode-switch">
+      <button id="loginTab" class="active">Entrar</button>
+      <button id="registerTab">Criar conta</button>
+    </div>
+
+    <div class="form">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Senha">
+      <input type="password" id="confirmPassword" placeholder="Confirmar senha" class="hidden">
+
+      <button class="btn primary" id="mainAction">Entrar</button>
+
+      <div class="divider">ou</div>
+
+      <button class="btn google" onclick="loginGoogle()">
+        Entrar com Google <img class="logo-google" src="fotos-kama-sutra/logo.png" alt="">
+      </button>
+
+      <span id="feedback" class="feedback"></span>
+    </div>
+  </div>
+
+</body>
+
+</html>

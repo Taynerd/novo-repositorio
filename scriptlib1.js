@@ -7,7 +7,7 @@ const textos = [
 "Como se chama o fetiche de ver o parceiro tendo relação com outro(a)?",
 "Qual o simbolo da mulher casada que é liberada para se relacionar com outros (as)",
 "Quantas pessoas são necessárias pra fazer um menáge?",
-"Qual nome da prática na qual o homem coloca seu pênis ereto para receber oral através de uma parede sem ver a pessoa do outro lado?",
+"Qual nome do local no qual o homem coloca seu pênis ereto para receber oral sem ver a pessoa do outro lado?",
 "Como é chamada a prática da troca de casais?",
 "g"
 ];
@@ -16,9 +16,10 @@ const respostas = [
   "cuckold",
   "rainha de espadas",
   "três",
-  "glory role",
+  "glory hole",
   "swing"
 ];
+
 document.querySelectorAll('.option').forEach(option => {
   option.addEventListener('click', e => {
     e.stopPropagation();
